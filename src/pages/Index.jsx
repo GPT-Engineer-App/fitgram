@@ -20,7 +20,19 @@ const Index = () => {
           </Button>
         </HStack>
       </Flex>
-      <Box as="form" p={4} w="full" maxW="md" bg="white" rounded="lg" shadow="md">
+      <Box
+        as="form"
+        p={4}
+        w="full"
+        maxW="md"
+        bg="white"
+        rounded="lg"
+        shadow="md"
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log("Post attempt");
+        }}
+      >
         <Input type="file" accept="image/*" placeholder="Upload Image" mb={2} />
         <Input placeholder="Caption" mb={2} />
         <Button leftIcon={<FaPlus />} colorScheme="pink" w="full">
