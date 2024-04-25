@@ -21,7 +21,7 @@ const Index = () => {
         </HStack>
       </Flex>
       <Box as="form" p={4} w="full" maxW="md" bg="white" rounded="lg" shadow="md">
-        <Input placeholder="Image URL" mb={2} />
+        <Input type="file" accept="image/*" placeholder="Upload Image" mb={2} />
         <Input placeholder="Caption" mb={2} />
         <Button leftIcon={<FaPlus />} colorScheme="pink" w="full">
           Post
