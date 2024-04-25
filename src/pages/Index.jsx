@@ -20,6 +20,13 @@ const Index = () => {
           </Button>
         </HStack>
       </Flex>
+      <Box as="form" p={4} w="full" maxW="md" bg="white" rounded="lg" shadow="md">
+        <Input placeholder="Image URL" mb={2} />
+        <Input placeholder="Caption" mb={2} />
+        <Button leftIcon={<FaPlus />} colorScheme="pink" w="full">
+          Post
+        </Button>
+      </Box>
       <VStack spacing={8} w="full" maxW="md" px={4} py={8}>
         <Post username="fit_jane" imageSrc="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwbW9kZWx8ZW58MHx8fHwxNzE0MDc1MzAyfDA&ixlib=rb-4.0.3&q=80&w=1080" caption="Never miss a Monday! 💪 #motivation #fitness" likes={231} comments={14} />
         <Post username="gym_bro" imageSrc="https://images.unsplash.com/photo-1599058917212-d750089bc07e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBsaWZ0aW5nJTIwd2VpZ2h0c3xlbnwwfHx8fDE3MTQwNzUzMDJ8MA&ixlib=rb-4.0.3&q=80&w=1080" caption="Pushing my limits! #strength #workout" likes={189} comments={12} />
@@ -36,12 +43,16 @@ const Post = ({ username, imageSrc, caption, likes, comments }) => {
       <Box p={4}>
         <Text fontWeight="bold">{username}</Text>
         <Text>{caption}</Text>
-        <HStack spacing={4} mt={2}>
+        <HStack spacing={4} mt={2} align="center">
           <Button leftIcon={<FaHeart />} size="sm" colorScheme="pink">
             {likes}
           </Button>
           <Button leftIcon={<FaComment />} size="sm" colorScheme="teal">
             {comments}
+          </Button>
+          <Input placeholder="Add a comment..." size="sm" flex="1" />
+          <Button size="sm" colorScheme="blue">
+            Post
           </Button>
         </HStack>
       </Box>
